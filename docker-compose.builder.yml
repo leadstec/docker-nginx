@@ -1,0 +1,31 @@
+version: "3.1"
+
+# Set -arch=_aarch64 for arm build
+
+services:
+  nginx:
+    build:
+      context: .
+      args:
+#        - arch=_aarch64
+        - version=1.14.1
+        - build=dev
+    image: mydev/nginx:1.14.1
+    ports:
+      - "50101:80"
+    volumes:
+      - ~/volumes-data/nginx.example.com/log:/data/log
+      - ~/volumes-data/nginx.example.com/persist:/data/persist
+    env_file:
+      - ./env
+    environment:
+      - EMAIL=
+      - LCS_LOG_LEVEL=debug
+    secrets:
+      - lcs
+    hostname: nginx.example.com
+    container_name: nginx.example.com
+
+secrets:
+  lcs:
+    file: ~/.vcubi/lcs

@@ -1,0 +1,21 @@
+version: "2"
+
+# Select appropriate image for your host machine architecture
+
+services:
+  nginx:
+    image: regimg.com/nginx:1.14.1
+#    image: regimg.com/nginx_aarch64:1.14.1
+    ports:
+      - "50101:80"
+    volumes:
+      - ~/volumes-data/nginx.example.com/log:/data/log
+      - ~/volumes-data/nginx.example.com/persist:/data/persist
+    env_file:
+      - ./env
+    environment:
+      - EMAIL=
+      - AUTH_CLIENT_ID=lcs
+      - AUTH_CLIENT_SECRET=bed94af9-e377-4413-9474-820c37ff2fe4
+    hostname: nginx.example.com
+    container_name: nginx.example.com

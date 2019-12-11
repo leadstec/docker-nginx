@@ -1,0 +1,114 @@
+{
+  "registry": "regimg.com",
+  "image": "nginx",
+  "version": "",
+  "build": "",
+  "schema": "20181203",
+  "lcs_schema": "1.6.0",
+  "permissions": [
+    {
+      "chmod": "775",
+      "chown": "nginx:lcs",
+      "path": "${APP_DIR}"
+    },
+    {
+      "chmod": "775",
+      "chown": "nginx:lcs",
+      "path": "${NGINX_LOG_DIR}"
+    }
+  ],
+  "envs": [
+    {
+      "name": "NGINX_HOSTNAME",
+      "default": "`hostname -f`",
+      "replacements": [
+        {
+          "pattern": "{{NGINX_HOSTNAME}}",
+          "path": "/etc/nginx/conf.d/default.conf",
+          "type": "1"
+        }
+      ]
+    },
+    {
+      "name": "NGINX_WORKER_PROCESSES",
+      "default": "1",
+      "replacements": [
+        {
+          "pattern": "{{NGINX_WORKER_PROCESSES}}",
+          "path": "/etc/nginx/nginx.conf",
+          "type": "1"
+        }
+      ]
+    },
+    {
+      "name": "NGINX_WORKER_CONNECTIONS",
+      "default": "1024",
+      "replacements": [
+        {
+          "pattern": "{{NGINX_WORKER_CONNECTIONS}}",
+          "path": "/etc/nginx/nginx.conf",
+          "type": "1"
+        }
+      ]
+    },
+    {
+      "name": "NGINX_KEEPALIVE_TIMEOUT",
+      "default": "65",
+      "replacements": [
+        {
+          "pattern": "{{NGINX_KEEPALIVE_TIMEOUT}}",
+          "path": "/etc/nginx/nginx.conf",
+          "type": "1"
+        }
+      ]
+    },
+    {
+      "name": "NGINX_CLIENT_MAX_BODY_SIZE",
+      "default": "8m",
+      "replacements": [
+        {
+          "pattern": "{{NGINX_CLIENT_MAX_BODY_SIZE}}",
+          "path": "/etc/nginx/nginx.conf",
+          "type": "1"
+        }
+      ]
+    },
+    {
+      "name": "NGINX_TYPES_HASH_MAX_SIZE",
+      "default": "1024",
+      "replacements": [
+        {
+          "pattern": "{{NGINX_TYPES_HASH_MAX_SIZE}}",
+          "path": "/etc/nginx/nginx.conf",
+          "type": "1"
+        }
+      ]
+    },
+    {
+      "name": "NGINX_GZIP",
+      "default": "true",
+      "replacements": [
+        {
+          "pattern": "#NGINX_GZIP_FALSE_ERASE",
+          "path": "/etc/nginx/nginx.conf",
+          "type": "4"
+        }
+      ]
+    }
+  ],
+  "secrets": [],
+  "storages": [
+    {
+      "type": "1",
+      "chown": "",
+      "path": "/etc/nginx/conf.d",
+      "base": "nginx"
+    },
+    {
+      "type": "1",
+      "chown": "",
+      "path": "/etc/nginx/nginx.conf",
+      "base": "nginx"
+    }
+  ]
+}
