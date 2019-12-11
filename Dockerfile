@@ -1,16 +1,16 @@
 #
 # AUTHOR            Frank,H.L.Lai <frank@leadstec.com>
-# DOCKER-VERSION    18.06
-# Copyright         (C) 2018 Leads Technologies Ltd. All rights reserved.
+# DOCKER-VERSION    19.03
+# Copyright         (C) 2020 LEADSTEC Solutions. All rights reserved.
 #
 ARG arch=
-FROM regimg.com/alpine${arch}:3.8
+FROM leadstec/alpine${arch}:3.10.3
 
-ARG version=1.14.x
+ARG version=1.16.1
 ARG build=dev
 
 LABEL version="${version}-${build}" \
-    description="NginX docker image for FAYCLOUD." \
+    description="NginX image for VCubi" \
     maintainer="Frank,H.L.Lai <frank@leadstec.com>"
 
 # set environment variables

@@ -1,6 +1,7 @@
-使用文档请参考 http://docs.fay.cloud/image/nginx/
-
 ### CHANGELOG
+
+**1.16.1**
+* Based on Alpine 3.10.3
 
 **1.14.0**
 * 基于alpine 3.8
