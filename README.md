@@ -1,6 +1,7 @@
 ### CHANGELOG
 
-**1.16.1**
+**2019/12/26**
+* Updated to 1.16.1
 * Based on Alpine 3.10.3
 
 **1.14.0**
