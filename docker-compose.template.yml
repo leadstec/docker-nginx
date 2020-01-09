@@ -12,8 +12,8 @@ services:
     ports:
       - "50101:80"
     volumes:
-      - ~/volumes-data/nginx.local/log:/data/log
-      - ~/volumes-data/nginx.local/persist:/data/persist
+      - ~/volumes/nginx.local/log:/data/log
+      - ~/volumes/nginx.local/persist:/data/persist
     env_file:
       - ../../env/debug.env
     environment:

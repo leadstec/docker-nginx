@@ -4,7 +4,7 @@
 # Copyright         (C) 2020 LEADSTEC Solutions. All rights reserved.
 #
 ARG arch=
-FROM leadstec/alpine${arch}:3.10.3
+FROM leadstec/alpine${arch}:3.11.2
 
 ARG version=1.16.1
 ARG build=dev
