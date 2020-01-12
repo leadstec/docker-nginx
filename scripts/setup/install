@@ -7,7 +7,7 @@ clog -t "nginx: Build process starts ..."
 # add image schema
 lcs-cli schema add --section nginx
 
-# Add nginx user to ide group
+# Add nginx user to lcs group
 addgroup nginx lcs
 clog -i "nginx: User nginx added to LCS group."
 

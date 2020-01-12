@@ -1,8 +1,8 @@
 ### CHANGELOG
 
-**2019/12/26**
-* Updated to 1.16.1
-* Based on Alpine 3.10.3
+**2020/01/12**
+* Update - NginX 1.16.1
+* Update - Based on Alpine 3.11.2
 
 **1.14.0**
 * 基于alpine 3.8

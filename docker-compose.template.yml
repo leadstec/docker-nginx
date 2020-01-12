@@ -9,6 +9,7 @@ services:
         - version=1.16.1
         - build=dev
     image: leadstec/nginx:1.16.1
+    init: true
     ports:
       - "50101:80"
     volumes:
