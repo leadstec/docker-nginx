@@ -1,4 +1,43 @@
-### CHANGELOG
+# NginX image for VCubi Platform
+
+![NginX](https://img.shields.io/badge/nginx-1.18.0,_latest-blue)
+![x86_64](https://img.shields.io/badge/x86_64-supported-brightgreen)
+![aarch64](https://img.shields.io/badge/aarch64-supported-brightgreen)
+
+The project contains NginX image for VCubi platform, based on LCS container management daemon.
+
+## How to Use
+
+### Pull image
+    # from Docker Hub
+    docker pull leadstec/nginx:[tag]
+    docker pull leadstec/nginx-aarch64:[tag]
+    # from Tencent CR
+    docker pull leadstec.tencentcloudcr.com/leadstec/nginx:[tag]
+    docker pull leadstec.tencentcloudcr.com/leadstec/nginx-aarch64:[tag]
+
+### Build image
+    docker-compose build nginx
+
+### LCS Schema & ENV
+| ENV Variable              | Description                     | Default | Accept Values | Required |
+|---------------------------|---------------------------------|---------|---------------|----------|
+| NGINX_HOSTNAME            | Default hostname of the server  |         |               |          |
+| NGINX_WORKER_PROCESSES    | Number of nginx worker          |    1    |               |          |
+| NGINX_WORKER_CONNECTIONS  | Number of connections allowed   |  1024   |               |          |
+| NGINX_KEEPALIVE_TIMEOUT   | Connection timeout              |   65    |               |          |
+| NGINX_CLIENT_MAX_BODY_SIZE| Allow content size (for files)  |   8m    |               |          |
+| NGINX_TYPES_HASH_MAX_SIZE | Hash max size                   |  1024   |               |          |
+| NGINX_GZIP                | Enable gzip on server side      |  true   | true,false    |          |
+
+## Image Structure Test
+    container-structure-test test --image leadstec/nginx:tag --config tests/nginx.yaml
+
+## CHANGELOG
+
+**2020/09/30**
+* New: Test schema
+* Update: Nginx 1.18.0
 
 **2020/01/12**
 * Update - NginX 1.16.1

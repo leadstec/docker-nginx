@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.8"
 
 services:
 
@@ -6,9 +6,10 @@ services:
     build:
       context: .
       args:
-        - version=1.16.1
+        - arch=
+        - version=1.18.0
         - build=dev
-    image: leadstec/nginx:1.16.1
+    image: leadstec.tencentcloudcr.com/leadstec/nginx:1.18.0
     init: true
     ports:
       - "50101:80"
