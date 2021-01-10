@@ -4,7 +4,7 @@
 # Website           https://www.leadstec.com
 # Copyright         (C) 2021 LEADSTEC Systems. All rights reserved.
 #
-FROM leadstec/alpine:3.12.0
+FROM leadstec/alpine:3.12.3
 
 LABEL description="NginX image for VCubi platform" \
     maintainer="Frank,H.L.Lai <frank@leadstec.com>"
