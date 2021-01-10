@@ -1,23 +1,16 @@
 # NginX image for VCubi Platform
 
-![NginX](https://img.shields.io/badge/nginx-1.18.0,_latest-blue)
-![x86_64](https://img.shields.io/badge/x86_64-supported-brightgreen)
-![aarch64](https://img.shields.io/badge/aarch64-supported-brightgreen)
+![Tags](https://img.shields.io/badge/nginx-1.18.0,_latest-blue)
+![Architect](https://img.shields.io/badge/Architecture-amd64,_arm64-brightgreen)
 
 The project contains NginX image for VCubi platform, based on LCS container management daemon.
 
 ## How to Use
-
-### Pull image
-    # from Docker Hub
+    # Pull image
     docker pull leadstec/nginx:[tag]
-    docker pull leadstec/nginx-aarch64:[tag]
-    # from Tencent CR
-    docker pull leadstec.tencentcloudcr.com/leadstec/nginx:[tag]
-    docker pull leadstec.tencentcloudcr.com/leadstec/nginx-aarch64:[tag]
 
-### Build image
-    docker-compose build nginx
+    # Build image
+    docker-compose build .
 
 ### LCS Schema & ENV
 | ENV Variable              | Description                     | Default | Accept Values | Required |
@@ -34,6 +27,10 @@ The project contains NginX image for VCubi platform, based on LCS container mana
     container-structure-test test --image leadstec/nginx:tag --config tests/nginx.yaml
 
 ## CHANGELOG
+
+**2021/01/10**
+* Move to DockerHub
+* Implement Github Actions
 
 **2020/09/30**
 * New: Test schema

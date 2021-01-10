@@ -5,11 +5,7 @@ services:
   nginx:
     build:
       context: .
-      args:
-        - arch=
-        - version=1.18.0
-        - build=dev
-    image: leadstec.tencentcloudcr.com/leadstec/nginx:1.18.0
+    image: leadstec/nginx:1.18.0
     init: true
     ports:
       - "50101:80"
