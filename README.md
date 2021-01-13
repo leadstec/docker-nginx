@@ -1,7 +1,7 @@
-# NginX image for VCubi Platform
+# NginX image for VCubi platform
 
 ![Version](https://img.shields.io/badge/NginX-1.18.0-blue)
-![Architecture](https://img.shields.io/badge/Arch-amd64,_arm64-brightgreen)
+![Arch](https://img.shields.io/badge/Arch-amd64,_arm64-brightgreen)
 ![Workflow](https://github.com/leadstec/docker-nginx/workflows/ci/badge.svg)
 
 The project contains NginX image for VCubi platform, based on LCS container management daemon.
@@ -15,10 +15,10 @@ LEADSTEC: [Official website](https://www.leadstec.com)
     docker pull leadstec/nginx:latest
 
     # Build image
-    docker-compose build .
+    docker-compose build
 
     # Image Structure Test
-    container-structure-test test --image leadstec/nginx:tag --config tests/nginx.yaml
+    container-structure-test test --image leadstec/nginx:tag --config tests/nginx.yal
 
 ## LCS Schema & ENV
 | ENV Variable              | Description                     | Default | Accept Values | Required |

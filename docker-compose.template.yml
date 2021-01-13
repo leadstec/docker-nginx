@@ -5,15 +5,12 @@ services:
   nginx:
     build:
       context: .
-    image: leadstec/nginx:1.18.0
-    init: true
+    image: leadstec/nginx:1.18
     ports:
       - "50101:80"
     volumes:
       - ~/volumes/nginx.local/log:/data/log
       - ~/volumes/nginx.local/persist:/data/persist
-    env_file:
-      - ../../env/debug.env
     environment:
       - NGINX_WORKER_PROCESSES=1
       - NGINX_WORKER_CONNECTIONS=512
@@ -22,6 +19,7 @@ services:
       - lcs
     hostname: nginx.local
     container_name: nginx.local
+    entrypoint: ["lcsd", "run", "start", "---", "/scripts/debug.sh"]
 
 secrets:
   lcs:
