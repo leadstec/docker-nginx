@@ -1,5 +1,13 @@
 # CHANGELOG
 
+**2021/03/28**
+* Update: config directory changed to /etc/nginx/http.d
+* Update: NGINX_GZIP, to on/off
+* New: LetsEncrypt added, need further test
+* New: NGINX_ENABLE_LETSENCRYPT, true/false
+
+* Remove: NGINX_WORKER_PROCESSES, set to auto
+
 **2021/01/10**
 * Update: Implement Github Actions for CI
 * Update: Move to DockerHub as default registry

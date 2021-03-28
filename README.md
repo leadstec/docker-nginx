@@ -18,16 +18,16 @@ LEADSTEC: [Official website](https://www.leadstec.com)
     docker-compose build
 
     # Image Structure Test
-    container-structure-test test --image leadstec/nginx:tag --config tests/nginx.yal
+    container-structure-test test --image leadstec/nginx:tag --config tests/nginx.yml
 
 ## LCS Schema & ENV
 | ENV Variable              | Description                     | Default | Accept Values | Required |
 |---------------------------|---------------------------------|---------|---------------|----------|
 | NGINX_HOSTNAME            | Default hostname of the server  |         |               |          |
-| NGINX_WORKER_PROCESSES    | Number of nginx worker          |    1    |               |          |
 | NGINX_WORKER_CONNECTIONS  | Number of connections allowed   |  1024   |               |          |
 | NGINX_KEEPALIVE_TIMEOUT   | Connection timeout              |   65    |               |          |
 | NGINX_CLIENT_MAX_BODY_SIZE| Allow content size (for files)  |   8m    |               |          |
 | NGINX_TYPES_HASH_MAX_SIZE | Hash max size                   |  1024   |               |          |
-| NGINX_GZIP                | Enable gzip on server side      |  true   | true,false    |          |
+| NGINX_GZIP                | Enable gzip on server side      |  on     | on,off    |          |
+| NGINX_LETSENCRYPT         | SSL by Let's Encrypt       |  false  | true,false    |          |
 

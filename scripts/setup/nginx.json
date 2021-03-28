@@ -3,7 +3,7 @@
   "image": "nginx",
   "version": "",
   "build": "",
-  "schema": "20181203",
+  "schema": "20210328",
   "lcs_schema": "1.6.0",
   "permissions": [
     {
@@ -24,39 +24,17 @@
       "replacements": [
         {
           "pattern": "{{NGINX_HOSTNAME}}",
-          "path": "/etc/nginx/conf.d/default.conf",
-          "type": "1"
-        }
-      ]
-    },
-    {
-      "name": "NGINX_WORKER_PROCESSES",
-      "default": "1",
-      "replacements": [
-        {
-          "pattern": "{{NGINX_WORKER_PROCESSES}}",
-          "path": "/etc/nginx/nginx.conf",
+          "path": "/etc/nginx/http.d/default.conf",
           "type": "1"
         }
       ]
     },
     {
       "name": "NGINX_WORKER_CONNECTIONS",
-      "default": "1024",
+      "default": "512",
       "replacements": [
         {
           "pattern": "{{NGINX_WORKER_CONNECTIONS}}",
-          "path": "/etc/nginx/nginx.conf",
-          "type": "1"
-        }
-      ]
-    },
-    {
-      "name": "NGINX_KEEPALIVE_TIMEOUT",
-      "default": "65",
-      "replacements": [
-        {
-          "pattern": "{{NGINX_KEEPALIVE_TIMEOUT}}",
           "path": "/etc/nginx/nginx.conf",
           "type": "1"
         }
@@ -86,14 +64,30 @@
     },
     {
       "name": "NGINX_GZIP",
-      "default": "true",
+      "default": "on",
       "replacements": [
         {
-          "pattern": "#NGINX_GZIP_FALSE_ERASE",
+          "pattern": "{{NGINX_GZIP}}",
           "path": "/etc/nginx/nginx.conf",
-          "type": "4"
+          "type": "1"
         }
       ]
+    },
+    {
+      "name": "NGINX_KEEPALIVE_TIMEOUT",
+      "default": "60",
+      "replacements": [
+        {
+          "pattern": "{{NGINX_KEEPALIVE_TIMEOUT}}",
+          "path": "/etc/nginx/nginx.conf",
+          "type": "1"
+        }
+      ]
+    },
+    {
+      "name": "NGINX_ENABLE_LETSENCRYPT",
+      "default": "false",
+      "replacements": []
     }
   ],
   "secrets": [],
@@ -101,7 +95,7 @@
     {
       "type": "1",
       "chown": "",
-      "path": "/etc/nginx/conf.d",
+      "path": "/etc/nginx/http.d",
       "base": "nginx"
     },
     {

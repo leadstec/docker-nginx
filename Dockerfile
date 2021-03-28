@@ -13,7 +13,7 @@ LABEL description="NginX image for VCubi platform" \
 ENV NGINX_LOG_DIR="${LOG_DIR}/nginx"
 
 # install packages
-RUN apk --update add nginx && \
+RUN apk --update add nginx netcat-openbsd bc wget git openssl libressl && \
     rm /var/cache/apk/*
 
 # add install/run scripts

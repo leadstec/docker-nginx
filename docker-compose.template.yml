@@ -12,7 +12,6 @@ services:
       - ~/volumes/nginx.local/log:/data/log
       - ~/volumes/nginx.local/persist:/data/persist
     environment:
-      - NGINX_WORKER_PROCESSES=1
       - NGINX_WORKER_CONNECTIONS=512
       - NGINX_CLIENT_MAX_BODY_SIZE=16m
     secrets:

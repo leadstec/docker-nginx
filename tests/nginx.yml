@@ -14,7 +14,7 @@ fileExistenceTests:
     uid: 0
     gid: 0
   - name: 'NginX default config'
-    path: '/etc/nginx/conf.d/default.conf'
+    path: '/etc/nginx/http.d/default.conf'
     shouldExist: true
     permissions: '-rw-r--r--'
     uid: 0
@@ -31,13 +31,12 @@ fileContentTests:
     path: '/etc/lcs/schema.json'
     expectedContents:
       - '"NGINX_HOSTNAME"'
-      - '"NGINX_WORKER_PROCESSES"'
       - '"NGINX_WORKER_CONNECTIONS"'
       - '"NGINX_KEEPALIVE_TIMEOUT"'
       - '"NGINX_CLIENT_MAX_BODY_SIZE"'
       - '"NGINX_TYPES_HASH_MAX_SIZE"'
       - '"NGINX_GZIP"'
-      - '"path": "/etc/nginx/conf.d"'
+      - '"path": "/etc/nginx/http.d"'
       - '"path": "/etc/nginx/nginx.conf"'
 
 metadataTest:
